@@ -133,7 +133,7 @@ function get_id_file ( $city , $last_id = null) {
 }
 
 function start ( $city ) {
-    Business::UPDATE_CATEGORIES_LIST();
+    #Business::UPDATE_CATEGORIES_LIST();
     $id_list = get_id_file($city);
     push_businesses_details($id_list);
     trace("Captured finished...");

@@ -45,8 +45,8 @@ class Business {
     
     private function _init_business () {
         //将商户类型由数组变为单值变量
-        //$categories = $this->_data['categories'];
-        //$this->_data['categories'] = $this->_set_categories($categories);
+        #$categories = $this->_data['categories'];
+        #$this->_data['categories'] = $this->_set_categories($categories);
         
         //将区域格式设为关联数组
         $regions = $this->_data['regions'];
@@ -99,8 +99,8 @@ class Business {
         while ( list ($key, $val) = each ( $obj ) ) {
             if ( $key == "regions" || $key == "categories" )
                 continue;
-            if ( $key == "business_id" )//business表格主键改为id
-                $key = 'id';
+            #if ( $key == "business_id" )//business表格主键改为id
+               # $key = 'id';
             $attributes = $attributes . "`$key`, ";
             $val = mysql_escape_string($val);
             $values = $values . "'$val', ";           
