@@ -153,6 +153,6 @@ function fetch_businesses_id () {
 }
 
 #fetch_businesses_id();
-start('shenzhen');
+start('beijing');
 
 ?>
