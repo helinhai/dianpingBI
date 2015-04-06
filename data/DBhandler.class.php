@@ -4,7 +4,7 @@ include_once('./utils.class.php');
 define ('HOST', 'localhost');
 define ('USER', 'root');
 define ('PASSWORD', '199371helu');
-define ('DB', 'guodong');
+define ('DB', 'helinhai');
 
 class DBhandler {
     private $_conn;

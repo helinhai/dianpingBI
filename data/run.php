@@ -133,7 +133,6 @@ function get_id_file ( $city , $last_id = null) {
 }
 
 function start ( $city ) {
-    #Business::UPDATE_CATEGORIES_LIST();
     $id_list = get_id_file($city);
     push_businesses_details($id_list);
     trace("Captured finished...");
@@ -142,8 +141,7 @@ function start ( $city ) {
 
 
 function fetch_businesses_id () {
-    $city_list = get_city_list();
-    #$city_list = array('shenzhen');
+    $city_list = array('beijing');
     foreach ( $city_list as $city ) {
         $id_list = array_unique( get_sports_businesses_id($city) );
         foreach ( $id_list as $id ) {

@@ -15,6 +15,7 @@ define('BUSINESS_REQUEST_URL','http://api.dianping.com/v1/business/get_single_bu
 //获取指定商户信息
 define('CITYLIST_REQUEST_URL','http://api.dianping.com/v1/metadata/get_cities_with_businesses');
 //获取支持商户搜索的最新城市列表
+define('COMMENTS_REQUEST_URL', 'http://api.dianping.com/v1/review/get_recent_reviews');
 
 
 abstract class DianpingAPI {
@@ -124,6 +125,46 @@ class DianpingAPI_City extends DianpingAPI {
         $codes .=SECRET;
         $sign = strtoupper(sha1($codes));
         $url= CITYLIST_REQUEST_URL . '?appkey='.APPKEY.'&sign='.$sign.$queryString;
+        
+        trace("Genereate request url: $url");
+        return $url;
+    }
+}
+class DianpingAPI_Comments extends DianpingAPI {
+    protected $_BUSINESS_ID;
+    
+    public function __construct () {
+        parent::__construct();
+    }
+    
+    public function set_BusinessID ( $id ) {
+        $this->_BUSINESS_ID = $id;
+        trace("Set Business ID as ".$this->_BUSINESS_ID);
+    }
+ 
+    /**
+     *产生API请求链接
+     *@return String
+     */
+    protected function create_request_url () {
+        //请求参数
+        $params = array('business_id'=>$this->_BUSINESS_ID);
+        //按照参数名排序
+        ksort($params);
+        trace("Your request based on:");
+        trace($params);
+        //连接待加密的字符串
+        $codes = APPKEY;
+        //请求的URL参数
+        $queryString = '';
+        while (list($key, $val) = each($params))
+        {
+            $codes .=($key.$val);
+            $queryString .=('&'.$key.'='.urlencode($val));
+        }
+        $codes .=SECRET;
+        $sign = strtoupper(sha1($codes));
+        $url= COMMENTS_REQUEST_URL . '?appkey='.APPKEY.'&sign='.$sign.$queryString;
         
         trace("Genereate request url: $url");
         return $url;

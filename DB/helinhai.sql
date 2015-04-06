@@ -1,23 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 4.2.7.1
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Generation Time: 2014-11-21 07:44:07
--- 服务器版本： 5.6.20
--- PHP Version: 5.5.15
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Database: `guodong`
+-- Database: `helinhai`
 --
 
 -- --------------------------------------------------------
@@ -93,7 +74,8 @@ CREATE TABLE IF NOT EXISTS `businesses_categories` (
 
 CREATE TABLE IF NOT EXISTS `categories` (
 `id` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL
+  `name` varchar(20) NOT NULL,
+  `parent_id` int(2) not NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 -- --------------------------------------------------------
@@ -116,30 +98,6 @@ CREATE TABLE IF NOT EXISTS `regions` (
 INSERT INTO `regions` (`business_id`, `region`, `business_district`, `sub_business_district`) VALUES
 (0, '', '', '');
 
--- --------------------------------------------------------
-
---
--- 表的结构 `users`
---
-
-CREATE TABLE IF NOT EXISTS `users` (
-`id` int(11) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- 转存表中的数据 `users`
---
-
-INSERT INTO `users` (`id`, `username`, `password`) VALUES
-(1, 'chai.yanlin', '');
-
---
--- Indexes for dumped tables
---
-
---
 -- Indexes for table `businesses`
 --
 ALTER TABLE `businesses`

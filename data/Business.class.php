@@ -111,17 +111,12 @@ class Business {
         $attributes = $attributes . "`created_by`) ";
         $values = $values . " '1');";
         
-        $sql = "INSERT INTO `guodong`.`businesses` " . $attributes . $values;
+        $sql = "INSERT INTO `helinhai`.`businesses` " . $attributes . $values;
         trace ("Creating businesses insert sql query:");
         trace($sql);
         return $sql;
     }
     
-    /**
-     *Regions object insert:
-      INSERT INTO `guodong`.`regions` (`business_id`, `region`, `business_district`, `sub_business_district`)
-      VALUES ('5247214', '罗湖区', '东门商业圈', '文锦渡');
-     */
     public function regionQuery () {
         $regions = $this->_data['regions'];
         $business_id = $this->_data['business_id'];
@@ -129,7 +124,7 @@ class Business {
         $business_district = $regions['business_district'];
         $sub_business_district = $regions['sub_business_district'];
         
-        $sql = "INSERT INTO `guodong`.`regions` (`business_id`, `region`, `business_district`, `sub_business_district`)";
+        $sql = "INSERT INTO `helinhai`.`regions` (`business_id`, `region`, `business_district`, `sub_business_district`)";
         $sql = $sql." VALUES ('$business_id', '$region', '$business_district','$sub_business_district');";
         trace("Creating regions insert sql query:");
         trace($sql);
@@ -138,7 +133,7 @@ class Business {
     
     public function setRelationBusinessCategoriesQuery ( $category_id) {
         $business_id = $this->_data['business_id'];
-        $sql = "INSERT INTO `guodong`.`businesses_categories` (`business_id`, `category_id`) VALUES ('$business_id', '$category_id')";
+        $sql = "INSERT INTO `helinhai`.`businesses_categories` (`business_id`, `category_id`) VALUES ('$business_id', '$category_id')";
         return $sql;
     }
     
@@ -147,7 +142,7 @@ class Business {
         $sql = array();
         foreach ( $list as $i ) {
             //所有运动商户的类型parent_id = 1；
-            array_push($sql, "INSERT INTO `guodong`.`categories` (`id`, `name`, `parent_id`) VALUES (NULL, '$i', '1');");
+            array_push($sql, "INSERT INTO `helinhai`.`categories` (`id`, `name`, `parent_id`) VALUES (NULL, '$i', '1');");
         }
         trace("Creating categories insert sql query:");
         trace($sql);
