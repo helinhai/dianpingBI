@@ -1,0 +1,102 @@
+* {
+  border: 0 none;
+  font-style: normal;
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+div {
+  display: block;
+}
+body {
+  margin: 0;
+  min-width: 1000px;
+  padding: 0;
+}
+#hdw {
+	width: 100%;
+	height: 100px;
+	color: #ffffff;
+	background-color: #3361a4;
+	background-bottom:2px solid #8c0e06;
+}
+#hd {
+	margin: 34px 0 0 27px;
+	float: left;
+}
+#content {
+	height: 500px;
+}
+#ftw{
+	width: 100%;
+	height: 60px;
+	color: #ffffff;
+	background-color: #3361a4;
+}
+#ft {
+  text-align: center;
+  padding: 20px;
+}
+.login_content {
+  height: 500px;
+  margin: 0 0 0 600px;
+  text-align: center;
+  padding-top: 100px;
+}
+#login_form{
+	margin-top: 10px;
+	padding-bottom: 40px;
+}
+#login_name{
+	margin-top: 10px;
+	height: 40px;
+	width: 400px;
+	background:transparent;
+	padding-left: 15px;
+	font-family: microsoft yahei,ST_heiti;
+	border:1px solid #ccc;
+	border-radius: 5px;
+}
+#login_password{
+	margin-top: 30px;
+	height: 40px;
+	width: 400px;
+	background:transparent;
+	padding-left: 15px;
+	font-family: microsoft yahei,ST_heiti;
+	border:1px solid #ccc;
+	border-radius: 5px;
+
+}
+.login_btn{
+	margin-top: 30px;
+	width: 415px;
+	padding:7px 0 7px 0;
+	text-align: center;
+	font-family: microsoft yahei,ST_heiti;
+	color: #fff;
+	background: #FF4200;
+	border: 1px solid #FF4200;
+	border-radius: 7px;
+	font-size: 22px;
+}
+.forget_password{
+	margin-top: 10px;
+	width: 180px;
+	font-family: microsoft yahei,ST_heiti;
+	font-size: 13px;
+	text-decoration: none;
+}
+.login_content a:hover{
+	color: #ccc;
+	text-decoration:underline;
+}
+.register{
+	margin-top: 10px;
+	width: 180px;
+	text-align: center;
+	font-family: microsoft yahei,ST_heiti;
+	font-size: 13px;
+	text-decoration: none;
+	margin-left: 100px;
+}
