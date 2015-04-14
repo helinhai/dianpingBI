@@ -20,6 +20,7 @@
     if (isset($_SESSION["online"])) {
         echo "<script language=\"JavaScript\">alert(\"已经登录！\");</script>";
         $username = $_SESSION['online'];
+        echo "<script language=\"JavaScript\">self.location='index.php?username='+$username;</script>";
     }
     else{
         if ($_POST["name"]) {
@@ -35,8 +36,8 @@
             $sql='select user_pw from user where user_name ='.$name;
             $results = $DBhandler->fetchQuery($sql);
             if($results[0]==$password){
-                echo "<script language=\"JavaScript\">self.location='index.php?username='+$name;</script>";
-                $_SESSION["online"] = $name; 
+                $_SESSION["online"] = $name;
+                echo "<script language=\"JavaScript\">self.location='index.php?username='+$name;</script>"; 
                 }
             else{
                 echo "<script language=\"JavaScript\">alert(\"用户名或密码不正确！\");</script>"; 

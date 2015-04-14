@@ -1,0 +1,30 @@
+.menu {
+  margin-left: 14px;
+  width: 160px;
+  background: #f8f8f9;
+  border-right: 1px solid #d9d9d9;
+  border-left: 1px solid #d9d9d9;
+  height: 620px;
+}
+.first_level{
+	border-top: 1px solid #fff;
+	min-height: 50px;
+	position: relative;
+}
+.menu_detail{
+  position: absolute;
+  width: 165px;
+  height: 50px;
+  top: 0;
+  border: none 0;
+}
+.fl{
+  display: block;
+  height: 100%;
+  border-radius: 3px 0px 0px 3px;
+  padding: 15px 0 0 35px;
+  font-size: 19px;
+}
+a{
+	text-decoration: none;
+}

@@ -5,8 +5,10 @@
 ?>
 
 
-<div class="login_content">
-    <h1>欢迎来到Dashbaord</h1>
+<div class="content">
+	<?php include 'common/menu.php' ; 
+	?>
+	<div class="data"></div>
 </div>	
 
 <?php include 'common/footer.php' ; 

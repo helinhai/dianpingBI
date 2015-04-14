@@ -24,8 +24,16 @@ body {
 	margin: 34px 0 0 27px;
 	float: left;
 }
+.hd.status {
+  float: right;
+  margin: 44px 7px 0 0;
+}
+.logout{
+	text-decoration: none;
+	color: white;
+}
 #content {
-	height: 500px;
+	height: 100%;
 }
 #ftw{
 	width: 100%;
